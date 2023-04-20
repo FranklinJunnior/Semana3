@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="formulario.CSS">
+    <title>Casa de Cambio</title>
+    <script type="text/javascript">
+        function convertir(){
+            var valore = parseInt(document.getElementById("valor").value);
+            var resultado = 0;
+            var dolar = 0.26;
+            var euro = 0.24;
+            if(document.getElementById("uno").checked){
+                resultado = valore / dolar;
+                alert("El cambio soles a dolares es:  $" + resultado.toFixed(2));
+            }
+            else if (document.getElementById("dos").checked){
+                resultado = valore / euro;
+                alert("El cambio soles a euros es:  "+ resultado.toFixed(2));
+            }
+            else{
+                alert("Tienes que completar todos los requerimientos:  ")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Casa de Cambio</h3>
+    <form class="formulario">
+        <p>Seleccionar moneda a enviar:</p>
+        <input type="radio" name="cambio" id="uno">Dólar
+        <input type="radio" name="cambio" id="dos">Euro
+        <p>Ingrese monto:</p>
+        <input type="number" id="valor" min="1" max="100000000">
+        <br>
+        <br>
+        <input type="button" id="cotizador" value="Cotizar" onclick="convertir()">
+    </form>
+</body>
+</html>
